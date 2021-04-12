@@ -1,0 +1,57 @@
+#!/bin/bash
+
+sock=$(ss -ap | grep $1)
+ttl_check=true
+break_=false
+if [ -z "$sock" ]
+then
+    printf "Socket is not found\n"
+else	
+    pid=$(echo "$sock" | awk -F "," '{print $2}'| awk -F "=" '{print $2}')
+    printf "$pid\n"
+    strace -p $pid -o sys_log2 & 
+    kernel_ttl=$(sysctl net.ipv4.ip_default_ttl | awk -F "=" '{print $2}')
+    while :
+    do	
+	IFS=$'\n'
+	for var in $(grep -E "(send|sendto|sendmsg|recvfrom|recv|recvmsg)" sys_log2)
+	do   
+	    if [ -n "$( echo "$var" | grep -E "(send|sendto|sendmsg)")" ]
+	    then
+		operation="send"
+	    else 
+		operation="recv"
+	    fi
+            IFS=$' \t\n'	    
+            header=$( echo "$var" |grep -o ', ".*"\.\.\.' | cut -c4- | rev | cut -c5- | rev | \
+		    sed -E 's/([^0-9\\])/\\\1/g' | sed -E 's/([^\\])\\/\1\//g' | \
+		    sed -E 's/([0-9])([0-9][0-9][0-9])/\1\/\2/g' |sed -E 's/([^0-9\/])([0-9])/\1\/\2/g'| \
+		    sed -E 's/([0-9])([0-9][0-9][0-9])/\1\/\2/g')
+	    if [ -z $header ]
+	    then 
+		    continue
+	    fi
+	    if $ttl_check 
+	    then  
+                cv_field=$(echo "$header" | awk -F "/" '{print $9}')
+                if [ -z $(printf "$cv_field" | grep '[0-9]') ]
+                then
+			packet_ttl=$(printf '%d' \'$cv_field)
+                else
+			packet_ttl=$(printf '%d' 0$cv_field)
+                fi
+	        if [ $kernel_ttl -ne $packet_ttl ]
+	        then 
+	            printf " $packet_ttl Warning: covert channel; operation -$operation\n"
+		    break_=true
+		    break
+                fi
+            fi	    
+        done 
+	if $break_ 
+	then
+	    break
+        fi	    
+        sleep 10 
+    done
+fi
