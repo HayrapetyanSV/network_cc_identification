@@ -1,1 +1,1 @@
-# network_cc_identification
+# scripts for network covert channel identification
