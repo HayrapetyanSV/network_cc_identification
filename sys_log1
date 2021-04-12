@@ -1,0 +1,23 @@
+recvfrom(3, "E\10\0&\345\216\0\0@\21\227$\177\0\0\7\177\0\0\5\324\252\330\223\0\22\0\0kdsj"..., 1024, 0, NULL, NULL) = 38
+sendto(3, "E\n\0\0'\376\0\0H\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0007\0\0Zqub"..., 75, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 75
+sendto(3, "E\n\0\0\254[\0\0e\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0000\0\0Fsut"..., 68, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 68
+sendto(3, "E\n\0\0\212\311\0\0l\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0000\0\0zIkg"..., 68, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 68
+sendto(3, "E\n\0\0\333\364\0\0l\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0001\0\0rDgh"..., 69, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 69
+sendto(3, "E\n\0\0T}\0\0o\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0006\0\0mzxU"..., 74, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 74
+sendto(3, "E\n\0\0\227\365\0\0 \21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0003\0\0nGBX"..., 71, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 71
+sendto(3, "E\n\0\0\371\37\0\0m\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0000\0\0Lgpq"..., 68, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 68
+sendto(3, "E\n\0\0\205C\0\0y\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0008\0\0FVbI"..., 76, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 76
+sendto(3, "E\n\0\0\220\254\0\0 \21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0001\0\0PmqK"..., 69, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 69
+sendto(3, "E\n\0\0\322\321\0\0f\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0009\0\0gshL"..., 77, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 77
+sendto(3, "E\n\0\0\270\254\0\0r\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0002\0\0RTFm"..., 70, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 70
+sendto(3, "E\n\0\0K\210\0\0i\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0008\0\0WUcA"..., 76, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 76
+sendto(3, "E\n\0\0\333\242\0\0e\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0004\0\0ijgD"..., 72, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 72
+sendto(3, "E\n\0\0\316\340\0\0n\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0009\0\0Apwu"..., 77, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 77
+sendto(3, "E\0\0\0M\0\0\0d\21\0\0\177\0\0\5\177\0\0\7\330\223\324\252\0003\0\0AEIw"..., 71, 0, {sa_family=AF_INET, sin_port=htons(54442), sin_addr=inet_addr("127.0.0.7")}, 16) = 71
+write(1, "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \320\264\320\265\320\271\321\201\321\202\320\262\320\270\320"..., 190) = 190
+write(1, "\n", 1)                       = 1
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+read(0,  <detached ...>
